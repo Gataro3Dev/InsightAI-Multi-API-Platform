@@ -279,15 +279,15 @@ for a in c.fetch(q="economía", language="es"):
 
 ```mermaid
 flowchart TD
-		A[Inicio: main.py] --> B{Parámetros/Config}
-		B --> C[Validar credenciales]
-		C --> D[Seleccionar proveedor (NewsAPI / GNews / ...)]
-		D --> E[Cliente HTTP]
-		E --> F{Rate limit / Reintentos}
-		F --> G[Normalizar respuesta]
-		G --> H[Limpiar texto (utils)]
-		H --> I[Unificar y devolver JSON]
-		I --> J[Persistir/Enviar a consumos]
+		A["Inicio: main.py"] --> B["Parámetros/Config"]
+		B --> C["Validar credenciales"]
+		C --> D["Seleccionar proveedor (NewsAPI / GNews / ...)"]
+		D --> E["Cliente HTTP"]
+		E --> F["Rate limit / Reintentos"]
+		F --> G["Normalizar respuesta"]
+		G --> H["Limpiar texto (utils)"]
+		H --> I["Unificar y devolver JSON"]
+		I --> J["Persistir/Enviar a consumos"]
 ```
 
 ---
