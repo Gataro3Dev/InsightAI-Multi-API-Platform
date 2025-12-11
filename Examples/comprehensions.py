@@ -1,41 +1,8 @@
-sample_articles = [
-    {
-        "title": "Python logra nuevo éxito",
-        "source": {"name": "TechNews"},
-        "description": "Gran noticia",
-        "category": "Tecnología",
-    },
-    {
-        "title": "Mercado en crisis",
-        "source": {"name": "Finance"},
-        "description": "Análisis completo",
-        "category": "Economía",
-    },
-    {
-        "title": "Nueva tecnología",
-        "source": {"name": "TechNews"},
-        "description": "Innovación",
-        "category": "Tecnología",
-    },
-    {
-        "title": "Deportes hoy",
-        "source": {"name": "Sports"},
-        "description": "Resultados",
-        "category": "Deportes",
-    },
-    {
-        "title": "Política actual",
-        "source": {"name": "News"},
-        "description": "Actualidad",
-        "category": "Política",
-    },
-    {
-        "title": "Ciencia avanza",
-        "source": {"name": "Science"},
-        "description": "Descubrimientos",
-        "category": "Ciencia",
-    },
-]
+"""
+Ejemplos y explicaciones de comprensiones en Python
+"""
+
+from examples.sample_data import sample_articles
 
 
 def extract_titles_traditional(articles):
@@ -58,6 +25,11 @@ def extract_article_summaries(articles):
         for article in articles
         if len(article["description"]) > 10
     }
+
+print(extract_titles_traditional(sample_articles))
+print("=========>")
+print(extract_titles(sample_articles))
+print(extract_article_summaries(sample_articles))
 
 
 def get_sources_traditional(articles):
@@ -102,9 +74,7 @@ def categorize(articles):
         for source in sources
     }
 
+print(categorize_traditional(sample_articles))
+print("=========>")
+print(categorize(sample_articles))
 
-# print(extract_titles_traditional(sample_articles))
-# print("=========>")#
-# print(extract_titles(sample_articles))
-
-# print(extract_article_summaries(sample_articles))
