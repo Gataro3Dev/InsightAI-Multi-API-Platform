@@ -54,9 +54,30 @@ def process_article_data(raw_data: dict) -> dict:
     return {}
 
 
-def get_sources(articles):
+def get_unique_sources(articles):
     return {
         article.get("source").get("name")
         for article in articles
         if article.get("source") and article.get("source").get("name")
     }
+
+
+def get_articles_by_source(articles: list[dict], source: str) -> list[dict]:
+    return list(filter(lambda article: article["source"]["name"] == source, articles))
+
+
+def get_reading_time(article: dict) -> dict:
+    """
+    Calcula el tiempo estimado de lectura de un artículo en minutos.
+
+    :param article: Diccionario que contiene los datos del artículo, incluyendo
+                    la clave 'content' con el texto del artículo.
+    :type article: dict
+    :return: Tiempo estimado de lectura en minutos.
+    :rtype: dict
+    """
+    minutes = (
+        len(article["content"].split()) // 200
+    )  # Asumiendo 200 palabras por minuto
+    article["reading_time"] = max(1, minutes)  # Al menos 1 minuto
+    return article
