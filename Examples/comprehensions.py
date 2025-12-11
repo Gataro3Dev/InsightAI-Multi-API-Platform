@@ -2,7 +2,7 @@
 Ejemplos y explicaciones de comprensiones en Python
 """
 
-from examples.sample_data import sample_articles
+from sample_data import sample_articles
 
 
 def extract_titles_traditional(articles):
@@ -25,6 +25,7 @@ def extract_article_summaries(articles):
         for article in articles
         if len(article["description"]) > 10
     }
+
 
 print(extract_titles_traditional(sample_articles))
 print("=========>")
@@ -74,7 +75,7 @@ def categorize(articles):
         for source in sources
     }
 
+
 print(categorize_traditional(sample_articles))
 print("=========>")
 print(categorize(sample_articles))
-
