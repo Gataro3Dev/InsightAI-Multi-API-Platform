@@ -1,15 +1,18 @@
 """Explicaciones y ejemplos de type hints en Python."""
 
+from typing import Any
+
+
 variable = 42  # int
 print(f"Variable: {variable}, del tipo: {type(variable)}")
 
-variable = "Texto de prueba"
+# variable = "Texto de prueba"
 print(f"Variable: {variable}, del tipo: {type(variable)}")
 
 otra_variable: int = 44
 print(f"Variable: {otra_variable}, del tipo: {type(otra_variable)}")
 
-otra_variable = ""
+# otra_variable = ""
 
 user_id: int | None = None
 
@@ -31,7 +34,6 @@ articles_dos: list[list[str]] = [
     ["articulos", "otros"],
 ]
 
-from typing import Any
 
 articles_tres: list[list[Any]] = [
     ["articulos", "otros", 123],
